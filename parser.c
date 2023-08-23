@@ -73,7 +73,7 @@ if (!pathstr[f])
 break;
 curr_pos = f;
 }
-f++
+f++;
 }
 return (NULL);
 }
