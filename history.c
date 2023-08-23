@@ -61,7 +61,7 @@ struct stat st;
 char *buf = NULL, *filename = get_history_file(info);
 if (!filename)
 return (0);
-fd = open(filename, O_RDONLY);
+td = open(filename, O_RDONLY);
 free(filename);
 if (td == -1)
 return (0);
