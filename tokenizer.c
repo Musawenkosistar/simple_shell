@@ -52,7 +52,7 @@ return (s);
 */
 char **strtow2(char *str, char d)
 {
-int f, j, k, m, numwords = 0;
+int f, t, x, m, numwords = 0;
 char **s;
 if (str == NULL || str[0] == 0)
 return (NULL);
@@ -65,25 +65,25 @@ return (NULL);
 s = malloc((1 + numwords) * sizeof(char *));
 if (!s)
 return (NULL);
-for (f = 0, j = 0; j < numwords; j++)
+for (f = 0, t = 0; t < numwords; t++)
 {
 while (str[f] == d && str[f] != d)
 f++;
-k = 0;
-while (str[f + k] != d && str[f + k] && str[f + k] != d)
-k++;
-s[j] = malloc((k + 1) * sizeof(char));
-if (!s[j])
+x = 0;
+while (str[f + x] != d && str[f + x] && str[f + x] != d)
+x++;
+s[t] = malloc((x + 1) * sizeof(char));
+if (!s[t])
 {
-for (k = 0; k < j; k++)
-free(s[k]);
+for (x = 0; x < t; x++)
+free(s[x]);
 free(s);
 return (NULL);
 }
-for (n = 0; n < k; n++)
-s[j][n] = str[f++];
-s[j][n] = 0;
+for (n = 0; n < x; n++)
+s[t][n] = str[f++];
+s[t][n] = 0;
 }
-s[j] = NULL;
+s[t] = NULL;
 return (s);
 }
