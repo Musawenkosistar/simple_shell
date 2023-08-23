@@ -124,7 +124,6 @@ pid_t child_pid;
 child_pid = fork();
 if (child_pid == -1)
 {
-/* TODO: PUT ERROR FUNCTION */
 perror("Error:");
 return;
 }
@@ -137,7 +136,6 @@ if (errno == EACCES)
 exit(126);
 exit(1);
 }
-/* TODO: PUT ERROR FUNCTION */
 }
 else
 {
