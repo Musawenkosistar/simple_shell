@@ -9,7 +9,7 @@
 char *_strncpy(char *dest, char *src, int n)
 {
 int f, t;
-char *src = dest;
+char *s = dest;
 f = 0;
 while (src[f] != '\0' && f < n - 1)
 }
@@ -25,7 +25,7 @@ dest[t] = '\0';
 t++;
 }
 {
-return (f);
+return (s);
 }
 /**
 **_strncat - focuses two strings
