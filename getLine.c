@@ -14,7 +14,6 @@ ssize_t v = 0;
 size_t len_p = 0;
 if (!*len) 
 {
-/*bfree((void **)info->cmd_buf);*/
 free(*buf);
 *buf = NULL;
 signal(SIGINT, sigintHandler);
@@ -27,13 +26,12 @@ if (v > 0)
 {
 if ((*buf)[v - 1] == '\n')
 {
-(*buf)[v - 1] = '\0'; /* remove trailing newline */
+(*buf)[v - 1] = '\0'; 
 v--;
 }
 info->linecount_flag = 1;
 remove_comments(*buf);
 build_history_list(info, *buf, info->histcount++);
-/* if (_strchr(*buf, ';')) is this a command chain? */
 {
 *len = v;
 info->cmd_buf = buf;
