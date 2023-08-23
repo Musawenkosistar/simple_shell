@@ -17,7 +17,7 @@ asm ("mov %1, %0\n\t"
 : "r" (td));
 if (ac == 2)
 {
-fd = open(av[1], O_RDONLY);
+td = open(av[1], O_RDONLY);
 if (td == -1)
 {
 if (errno == EACCES)
@@ -33,7 +33,7 @@ exit(127);
 }
 return (EXIT_FAILURE);
 }
-info->readtd = td;
+info->readfd = td;
 }
 populate_env_list(info);
 read_history(info);
