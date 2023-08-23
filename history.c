@@ -34,7 +34,7 @@ char *filename = get_history_file(info);
 list_t *node = NULL;
 if (!filename)
 return (-1);
-fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0644);
+td = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0644);
 free(filename);
 if (td == -1)
 return (-1);
@@ -77,7 +77,7 @@ buf[fsize] = 0;
 if (rdlen <= 0)
 return (free(buf), 0);
 close(fd);
-for (i = 0; f < fsize; f++)
+for (f = 0; f < fsize; f++)
 if (buf[f] == '\n')
 {
 buf[f] = 0;
