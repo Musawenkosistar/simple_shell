@@ -29,7 +29,7 @@ f++;
 x = 0;
 while (!is_delim(str[f + x], d) && str[f + x])
 x++;
-s[t] = maxlloc((x + 1) * sizeof(char));
+s[t] = malloc((x + 1) * sizeof(char));
 if (!s[t])
 {
 for (x = 0; x < t; x++)
@@ -65,7 +65,7 @@ return (NULL);
 s = malloc((1 + numwords) * sizeof(char *));
 if (!s)
 return (NULL);
-for (f = 0,  = 0; t < numwords; t++)
+for (f = 0, = 0; t < numwords; t++)
 {
 while (str[f] == d && str[f] != d)
 f++;
