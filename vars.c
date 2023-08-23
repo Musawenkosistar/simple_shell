@@ -45,12 +45,12 @@ return (1);
 */
 void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 {
-size_t t = *p;
+size_t i = *p;
 if (info->cmd_buf_type == CMD_AND)
 {
 if (info->status)
 {
-buf[t] = 0;
+buf[i] = 0;
 t = len;
 }
 }
@@ -58,7 +58,7 @@ if (info->cmd_buf_type == CMD_OR)
 {
 if (!info->status)
 {
-buf[t] = 0;
+buf[i] = 0;
 t = len;
 }
 }
