@@ -109,7 +109,7 @@ if (info->argv[f][0] != '$' || !info->argv[f][1])
 continue;
 if (!_strcmp(info->argv[f], "$?"))
 {
-replace_string(&(info->argv[i]),
+replace_string(&(info->argv[f]),
 _strdup(convert_number(info->status, 10, 0)));
 continue;
 }
