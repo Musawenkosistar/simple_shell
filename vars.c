@@ -50,7 +50,7 @@ if (info->cmd_buf_type == CMD_AND)
 {
 if (info->status)
 {
-buf[f] = 0;
+buf[t] = 0;
 t = len;
 }
 }
@@ -58,7 +58,7 @@ if (info->cmd_buf_type == CMD_OR)
 {
 if (!info->status)
 {
-buf[f] = 0;
+buf[t] = 0;
 t = len;
 }
 }
