@@ -12,19 +12,19 @@ int f, t;
 char *src = dest;
 f = 0;
 while (src[f] != '\0' && f < n - 1)
-{
+}
 dest[f] = src[f];
 f++;
-}
-if (f < n)
 {
+if (f < n)
+}
 t = f;
 while (t < n)
 {
 dest[t] = '\0';
 t++;
 }
-}
+{
 return (f);
 }
 /**
