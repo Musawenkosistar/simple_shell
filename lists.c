@@ -78,11 +78,11 @@ return (new_node);
 size_t print_list_str(const list_t *h)
 {
 size_t f = 0;
-while (j)
+while (h)
 {
-_puts(j->str ? j->str : "(nil)");
+_puts(h->str ? h->str : "(nil)");
 _puts("\n");
-j = j->next;
+h = h->next;
 f++;
 }
 return (f);
@@ -112,7 +112,7 @@ return (1);
 node = *head;
 while (node)
 {
-if (i == index)
+if (f == index)
 {
 prev_node->next = node->next;
 free(node->str);
