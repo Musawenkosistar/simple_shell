@@ -23,7 +23,7 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 #else
 		x = _getline(info, buf, &len_p);
 #endif
-		if <x > 0)
+		if (x > 0)
 		{
 			if ((*buf)[x - 1] == '\n')
 			{
@@ -98,11 +98,11 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 {
 	ssize_t x = 0;
 
-	if (*f)
+	if (*i)
 		return (0);
 	x = read(info->readfd, buf, READ_BUF_SIZE);
 	if (x >= 0)
-		*f = x;
+		*i = x;
 	return (x);
 }
 /**
@@ -142,7 +142,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
 	else
 		_strncpy(new_p, buf + f, v - f + 1);
 
-	s += v - f;
+	y += v - f;
 	f = v;
 	p = new_p;
 
