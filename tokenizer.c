@@ -52,39 +52,38 @@ return (s);
 */
 char **strtow2(char *str, char d)
 {
-	int i, x, t, m, numwords = 0;
-	char **s;
-
-	if (str == NULL || str[0] == 0)
-		return (NULL);
-	for (f = 0; str[f] != '\0'; f++)
-		if ((str[f] != d && str[f + 1] == d) ||
-		    (str[f] != d && !str[f + 1]) || str[f + 1] == d)
-			numwords++;
-	if (numwords == 0)
-		return (NULL);
-	s = malloc((1 + numwords) * sizeof(char *));
-	if (!s)
-		return (NULL);
-	for (f = 0, t = 0; t < numwords; t++)
-	{
-		while (str[f] == d && str[f] != d)
-			f++;
-		x = 0;
-		while (str[f + x] != d && str[f + x] && str[f + x] != d)
-			x++;
-		s[t] = malloc((x + 1) * sizeof(char));
-		if (!s[t])
-		{
-			for (x = 0; x < t; x++)
-				free(s[x]);
-			free(s);
-			return (NULL);
-		}
-		for (n = 0; n < x; n++)
-			s[t][n] = str[f++];
-		s[t][n] = 0;
-	}
-	s[t] = NULL;
-	return (s);
+int f, j, k, m, numwords = 0;
+char **s;
+if (str == NULL || str[0] == 0)
+return (NULL);
+for (f = 0; str[f] != '\0'; f++)
+if ((str[f] != d && str[f + 1] == d) ||
+(str[f] != d && !str[f + 1]) || str[f + 1] == d)
+numwords++;
+if (numwords == 0)
+return (NULL);
+s = malloc((1 + numwords) * sizeof(char *));
+if (!s)
+return (NULL);
+for (f = 0, j = 0; j < numwords; j++)
+{
+while (str[f] == d && str[f] != d)
+f++;
+k = 0;
+while (str[f + k] != d && str[f + k] && str[f + k] != d)
+k++;
+s[j] = malloc((k + 1) * sizeof(char));
+if (!s[j])
+{
+for (k = 0; k < j; k++)
+free(s[k]);
+free(s);
+return (NULL);
+}
+for (n = 0; n < k; n++)
+s[j][n] = str[f++];
+s[j][n] = 0;
+}
+s[j] = NULL;
+return (s);
 }
