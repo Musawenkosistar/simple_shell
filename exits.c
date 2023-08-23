@@ -17,10 +17,10 @@ dest[f] = src[f];
 f++;
 {
 if (f < n)
-}
+{
 t = f;
 while (t < n)
-}
+{
 dest[t] = '\0';
 t++;
 }
