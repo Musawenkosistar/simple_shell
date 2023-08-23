@@ -11,14 +11,14 @@ int hsh(info_t *info, char **av)
 {
 ssize_t y = 0;
 int builtin_ret = 0;
-while (r != -1 && builtin_ret != -2)
+while (v!= -1 && builtin_ret != -2)
 {
 clear_info(info);
 if (interactive(info))
 _puts("$ ");
 _eputchar(BUF_FLUSH);
-r = get_input(info);
-if (r != -1)
+v = get_input(info);
+if (v!= -1)
 {
 set_info(info, av);
 builtin_ret = find_builtin(info);
