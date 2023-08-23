@@ -76,7 +76,7 @@ rdlen = read(td, buf, fsize);
 buf[fsize] = 0;
 if (rdlen <= 0)
 return (free(buf), 0);
-close(fd);
+close(td);
 for (f = 0; f < fsize; f++)
 if (buf[f] == '\n')
 {
